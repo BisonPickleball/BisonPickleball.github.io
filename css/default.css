@@ -1,0 +1,99 @@
+
+
+@media (min-width: 768px) {
+  .modal-xl {	 
+   max-width:55%;
+  }
+}
+
+body,html{
+  margin:0;
+  width:100%;
+}
+html{
+    background-color: #f8f9fa;
+}
+
+table {        
+         width: 100%;        
+         }
+
+th {
+	background-color: LightGray;
+}
+		 
+th, td {
+	 text-align: left;
+			 
+	 border: 1px solid black;
+	 
+	 padding-top: 3px;
+	 
+	 }
+	  
+div .bg-dark {
+color:white;
+}	
+
+.noborder
+{
+	border-left:none !important;
+	border:none !important;	
+}
+
+#logo { 
+	 width:120px;
+	 height:200px;
+}
+
+#pagecontainer {
+	max-width: 1000px;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+ .modal-dialog {
+  height: 90%; 
+}
+ .modal-content {
+  height: 100%; 
+}  
+
+#gallery div {
+
+	align-content: center;
+}
+
+
