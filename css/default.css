@@ -91,9 +91,14 @@ div.desc {
   height: 100%; 
 }  
 
-#gallery div {
+#gallery {
+	padding: 7px;
+}
 
+#gallery div {
 	align-content: center;
+	padding: 0px;
+	
 }
 
 
