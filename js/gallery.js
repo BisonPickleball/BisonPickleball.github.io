@@ -127,7 +127,13 @@ const images = [
 '2025-01-18.jpg',
 '2025-01-25.jpg',
 '2025-01-25b.jpg',
-'2025-01-25c.jpg'
+'2025-01-25c.jpg',
+'2025-02-01.jpg',
+'2025-02-01b.jpg',
+'2025-03-09.jpg',
+'2025-03-16.jpg',
+'2025-03-22.jpg',
+'2025-03-23.jpg'
 ];
 
 var first = true;
@@ -146,6 +152,7 @@ var count = 0;
 	
 	
 	img.setAttribute('data-bs-slide-to',count);
+	 img.setAttribute('title', image.substring(0, 10)); // Set the first 10 characters of the filename as the tooltip
 	count=count+1;
 
 	gallerydiv.appendChild(img);
@@ -159,14 +166,23 @@ var count = 0;
 		carouseldiv.classList.add("active");
 		first=false;
 	}
-	
-	
+		
 	const img2 = document.createElement('img');
 	img2.src = `${imageFolder}/${image}`;
 	img2.classList.add("w-100");
  	
-	carouseldiv.appendChild(img2);
-	carousel.appendChild(carouseldiv);
+    // Create caption element
+    const captionDiv = document.createElement('div');
+    captionDiv.classList.add("carousel-caption");
+    
+    const captionText = document.createElement('p');
+    captionText.textContent = image.substring(0, 10); // Set the filename as the caption text
+    
+    captionDiv.appendChild(captionText);
+    carouseldiv.appendChild(img2);
+    carouseldiv.appendChild(captionDiv); // Append the caption to the carousel item
+    
+    carousel.appendChild(carouseldiv);
 	
 			
 }); 
