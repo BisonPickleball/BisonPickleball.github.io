@@ -177,8 +177,6 @@ const images = [
 '2026-03-15b.jpg',
 '2026-03-22.jpg'
 
-
-
 ];
 
 var first = true;
