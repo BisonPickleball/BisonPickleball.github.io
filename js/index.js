@@ -1,19 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const clinics = document.getElementById("clinics");
+  const loading = document.getElementById("clinics-loading");
   const rows = document.querySelectorAll("tr.data-row");
 
-  // Normalize "today" to midnight for date-only comparison
+  // Normalize today to midnight
   const today = new Date();
   today.setHours(0, 0, 0, 0);
+
+  const fetches = [];
 
   rows.forEach(row => {
     const cells = row.querySelectorAll("td");
     if (cells.length < 1) return;
 
-    // ✅ Parse clinic date from first column
+    // Parse clinic date
     const dateText = cells[0].textContent.trim();
     const clinicDate = new Date(dateText);
 
-    // ✅ Remove rows with past dates
+    // Remove past clinics
     if (!isNaN(clinicDate) && clinicDate < today) {
       row.remove();
       return;
@@ -24,22 +28,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const eventId = row.id;
 
-    // ✅ Empty or missing ID → default to Register
-    if (!eventId) {
-      linkCell.textContent = "Register";
-      return;
-    }
+    // Default
+    linkCell.textContent = "Register";
 
-    fetch(`https://secure.pickleballcanada.org/getSpotsRemainingEndPoint.php?eventId=${eventId}`)
+    if (!eventId) return;
+
+    const fetchPromise = fetch(
+      `https://secure.pickleballcanada.org/getSpotsRemainingEndPoint.php?eventId=${eventId}`
+    )
       .then(response => response.text())
       .then(spotsRemaining => {
         const spots = parseInt(spotsRemaining, 10);
 
-        // ✅ Invalid response fallback
-        if (isNaN(spots)) {
-          linkCell.textContent = "Register";
-          return;
-        }
+        if (isNaN(spots)) return;
 
         if (spots <= 0) {
           linkCell.textContent = "Full – Join Waitlist";
@@ -51,8 +52,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       })
       .catch(err => {
-        linkCell.textContent = "Register";
         console.warn(`Failed to load spots for event ${eventId}`, err);
       });
+
+    fetches.push(fetchPromise);
+  });
+
+  // ✅ Reveal table only after ALL fetches finish
+  Promise.allSettled(fetches).then(() => {
+    if (loading) loading.remove();
+    if (clinics) clinics.style.display = "block";
   });
 });
