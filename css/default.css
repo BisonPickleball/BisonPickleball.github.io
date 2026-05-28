@@ -6,6 +6,27 @@
   }
 }
 
+.new-badge {
+   display: inline-block;
+   background: #ff0000;
+   color: white;
+   font-weight: bold;
+   padding: 2px 8px;
+   border-radius: 6px;
+   margin-left: 8px;
+   font-size: 14px;
+   animation: flash 3s infinite;
+}
+
+@keyframes flash {
+   0%, 50%, 100% {
+      opacity: 1;
+   }
+   25%, 75% {
+      opacity: 0.2;
+   }
+}
+
 body,html{
   margin:0;
   width:100%;
