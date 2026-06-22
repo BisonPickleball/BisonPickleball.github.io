@@ -1,0 +1,90 @@
+/* ---------- General Layout ---------- */
+
+body, html {
+    margin: 0;
+    width: 100%;
+}
+
+/* ---------- Modal Fullscreen Fix ---------- */
+
+.modal-body {
+    padding: 0;
+}
+
+.modal-content {
+    background-color: black;
+    border: none;
+}
+
+/* ---------- Carousel Fullscreen ---------- */
+
+#carouselGallery {
+    height: 100vh;
+}
+
+#carouselGallery .carousel-inner,
+#carouselGallery .carousel-item {
+    height: 100%;
+}
+
+/* ✅ Image scaling (no distortion, no scrollbars) */
+#carouselGallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ---------- Close Button ---------- */
+
+.btn-close {
+    filter: invert(1);
+    opacity: 0.8;
+    z-index: 10;
+}
+
+.btn-close:hover {
+    opacity: 1;
+}
+
+/* ---------- Carousel Controls (clean fade-in) ---------- */
+
+.carousel-control-prev,
+.carousel-control-next {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#carouselGallery:hover .carousel-control-prev,
+#carouselGallery:hover .carousel-control-next {
+    opacity: 1;
+}
+
+/* ---------- Gallery Grid ---------- */
+
+#gallery {
+    padding: 7px;
+}
+
+
+
+/* ---------- Logo ---------- */
+
+#logo {
+    width: 120px;
+    height: 200px;
+}
+
+/* ---------- Optional (keep from your existing) ---------- */
+
+@media (min-width: 768px) {
+    .modal-xl {
+        max-width: 55%;
+    }
+}
+
+/* ---------- Misc ---------- */
+
+.noborder {
+    border: none !important;
+}
+``	
