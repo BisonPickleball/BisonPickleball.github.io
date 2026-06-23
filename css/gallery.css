@@ -1,0 +1,129 @@
+/* ============================================================
+   GALLERY.CSS — Shared gallery + modal + carousel styling
+   Used by: /gallery/index.html and /gallery/esp.html
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   FULLSCREEN MODAL
+   ------------------------------------------------------------ */
+
+#exampleModal .modal-dialog {
+    height: 100vh !important;
+    max-width: 100% !important;
+    margin: 0;
+}
+
+#exampleModal .modal-content {
+    height: 100vh !important;
+    background-color: black;
+    border: none;
+}
+
+.modal-body {
+    padding: 0;
+}
+
+
+/* ------------------------------------------------------------
+   CAROUSEL — FULLSCREEN BEHAVIOR
+   ------------------------------------------------------------ */
+
+#carouselGallery {
+    height: 100vh;
+}
+
+#carouselGallery .carousel-inner,
+#carouselGallery .carousel-item {
+    height: 100%;
+}
+
+/* Prevent distortion — images scale cleanly */
+#carouselGallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: black;
+}
+
+
+/* ------------------------------------------------------------
+   CAROUSEL CONTROLS
+   ------------------------------------------------------------ */
+
+.carousel-control-prev,
+.carousel-control-next {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#carouselGallery:hover .carousel-control-prev,
+#carouselGallery:hover .carousel-control-next {
+    opacity: 1;
+}
+
+
+/* ------------------------------------------------------------
+   CLOSE BUTTON (top-right)
+   ------------------------------------------------------------ */
+
+.btn-close {
+    filter: invert(1);
+    opacity: 0.8;
+    z-index: 10;
+}
+
+.btn-close:hover {
+    opacity: 1;
+}
+
+
+/* ------------------------------------------------------------
+   GALLERY GRID (thumbnails)
+   ------------------------------------------------------------ */
+
+#gallery {
+    padding: 7px;
+}
+
+#gallery img {
+    cursor: pointer;
+    transition: transform 0.15s ease-in-out;
+}
+
+#gallery img:hover {
+    transform: scale(1.02);
+}
+
+
+/* ------------------------------------------------------------
+   RESPONSIVE GRID (Bootstrap handles most)
+   ------------------------------------------------------------ */
+
+#gallery .col-12,
+#gallery .col-sm-6,
+#gallery .col-lg-3 {
+    padding: 0;
+}
+
+
+/* ------------------------------------------------------------
+   OPTIONAL: Modal width on larger screens (legacy support)
+   ------------------------------------------------------------ */
+
+@media (min-width: 768px) {
+    .modal-xl {
+        max-width: 55%;
+    }
+}
+
+
+/* ------------------------------------------------------------
+   CAPTIONS
+   ------------------------------------------------------------ */
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 6px 12px;
+    border-radius: 4px;
+}

@@ -1,131 +1,119 @@
+/* ============================================================
+   DEFAULT.CSS — Global layout, menus, typography, utilities
+   Shared by all pages on the site
+   ============================================================ */
 
 
-@media (min-width: 768px) {
-  .modal-xl {	 
-   max-width:55%;
-  }
+/* ------------------------------------------------------------
+   GLOBAL RESET + PAGE BACKGROUND
+   ------------------------------------------------------------ */
+
+body, html {
+    margin: 0;
+    width: 100%;
 }
 
-.new-badge {
-   display: inline-block;
-   background: #ff0000;
-   color: white;
-   font-weight: bold;
-   padding: 2px 8px;
-   border-radius: 6px;
-   margin-left: 8px;
-   font-size: 14px;
-   animation: flash 3s infinite;
-}
-
-@keyframes flash {
-   0%, 50%, 100% {
-      opacity: 1;
-   }
-   25%, 75% {
-      opacity: 0.2;
-   }
-}
-
-body,html{
-  margin:0;
-  width:100%;
-}
-html{
+html {
     background-color: #f8f9fa;
 }
 
-table {        
-         width: 100%;        
-         }
 
-th {
-	background-color: LightGray;
-}
-		 
-th, td {
-	 text-align: left;
-			 
-	 border: 1px solid black;
-	 
-	 padding-top: 3px;
-	 
-	 }
-	  
-div .bg-dark {
-color:white;
-}	
-
-.noborder
-{
-	border-left:none !important;
-	border:none !important;	
-}
-
-#logo { 
-	 width:120px;
-	 height:200px;
-}
+/* ------------------------------------------------------------
+   PAGE CONTAINER
+   ------------------------------------------------------------ */
 
 #pagecontainer {
-	max-width: 1000px;
+    max-width: 1000px;
 }
 
-div.desc {
-  padding: 15px;
-  text-align: center;
+
+/* ------------------------------------------------------------
+   LOGO
+   ------------------------------------------------------------ */
+
+#logo {
+    width: 120px;
+    height: 200px;
 }
 
-* {
-  box-sizing: border-box;
-}
 
-.responsive {
-  padding: 0 6px;
-  float: left;
-  width: 24.99999%;
-}
+/* ------------------------------------------------------------
+   TABLE STYLING
+   ------------------------------------------------------------ */
 
-@media only screen and (max-width: 700px) {
-  .responsive {
-    width: 49.99999%;
-    margin: 6px 0;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .responsive {
+table {
     width: 100%;
-  }
+}
+
+th {
+    background-color: LightGray;
+}
+
+th, td {
+    text-align: left;
+    border: 1px solid black;
+    padding-top: 3px;
+}
+
+
+/* ------------------------------------------------------------
+   DARK BACKGROUND TEXT FIX
+   ------------------------------------------------------------ */
+
+div .bg-dark {
+    color: white;
+}
+
+
+/* ------------------------------------------------------------
+   UTILITY CLASSES
+   ------------------------------------------------------------ */
+
+.noborder {
+    border: none !important;
 }
 
 .clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
- .modal-dialog {
-  height: 90%; 
-}
- .modal-content {
-  height: 100%; 
-}  
 
-#gallery {
-	padding: 7px;
-}
+/* ------------------------------------------------------------
+   RESPONSIVE HELPERS (legacy)
+   ------------------------------------------------------------ */
 
-#gallery div {
-	align-content: center;
-	padding: 0px;
-	
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
 }
 
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+
+/* ------------------------------------------------------------
+   MISC
+   ------------------------------------------------------------ */
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
 
 /* Hide clinics until JS finishes */
 #clinics {
-  display: none;
+    display: none;
 }
-
-
