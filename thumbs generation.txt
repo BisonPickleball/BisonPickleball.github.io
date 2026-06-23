@@ -1,0 +1,10 @@
+install image magick from
+https://imagemagick.org
+
+use powershell command from the image folder. make sure thumbs folder exists
+
+cd "whatever folder"
+
+ powershell -ExecutionPolicy Bypass -File makethumbs.ps1
+
+

@@ -41,8 +41,8 @@ images.forEach(filename => {
     const thumbWrapper = document.createElement('div');
     thumbWrapper.classList.add('col-12', 'col-sm-6', 'col-lg-3');
 
-    const thumb = document.createElement('img');
-    thumb.src = `${imageFolder}/${filename}`;
+    const thumb = document.createElement('img');    
+	thumb.src = `${imageFolder}/thumbs/${filename}`;
     thumb.classList.add('w-100', 'p-1');
     thumb.dataset.bsTarget = '#carouselGallery';
     thumb.dataset.bsSlideTo = index;

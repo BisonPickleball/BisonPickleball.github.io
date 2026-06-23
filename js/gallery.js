@@ -13,7 +13,7 @@ const imageFolder = '../images';
 const images = [
     '2026-06-21b.jpg', '2026-06-21.jpg', '2026-06-06.jpg',
     '2026-05-24b.jpg', '2026-05-24.jpg', '2026-05-23.jpg',
-    '2026-04-29b.png', '2026-04-29.jpg', '2026-04-26b.jpg',
+    '2026-04-29b.jpg', '2026-04-29.jpg', '2026-04-26b.jpg',
     '2026-04-26.jpg', '2026-04-19b.jpg', '2026-04-19.jpg',
     '2026-04-12.jpg', '2026-03-29.jpg', '2026-03-22.jpg',
     '2026-03-15b.jpg', '2026-03-15.jpg', '2026-03-08b.jpg',
@@ -91,7 +91,8 @@ images.forEach(filename => {
     thumbWrapper.classList.add('col-12', 'col-sm-6', 'col-lg-3');
 
     const thumb = document.createElement('img');
-    thumb.src = `${imageFolder}/${filename}`;
+    
+	thumb.src = `${imageFolder}/thumbs/${filename}`;
     thumb.classList.add('w-100', 'p-1');
     thumb.dataset.bsTarget = '#carouselGallery';
     thumb.dataset.bsSlideTo = index;
