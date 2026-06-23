@@ -87,4 +87,13 @@ body, html {
 .noborder {
     border: none !important;
 }
-``	
+
+
+
+#exampleModal .modal-dialog {
+    height: 100vh !important;
+}
+
+#exampleModal .modal-content {
+    height: 100vh !important;
+}
